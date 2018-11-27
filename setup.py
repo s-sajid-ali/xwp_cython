@@ -6,25 +6,25 @@ import numpy as np
 ext_modules=[
         Extension('prop1d_cython',
         sources=['xwp_cython/prop1d_cython.pyx'],
-        extra_compile_args=['-O3','-fopenmp','-xcore-avx2','-I/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/libimf.a'],
+        extra_compile_args=['-O3','-fopenmp','-mavx'],
         extra_link_args=['-fopenmp'],
         language='c'),
     
         Extension('prop2d_cython_2_loop',
         sources=['xwp_cython/prop2d_cython_2_loop.pyx'],
-        extra_compile_args=['-O3','-fopenmp','-xcore-avx2','-I/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/libimf.a'],
+        extra_compile_args=['-O3','-fopenmp','-mavx'],
         extra_link_args=['-fopenmp'],
         language='c'),
     
         Extension('prop2d_cython_4_loop_serial',
         sources=['xwp_cython/prop2d_cython_4_loop_serial.pyx'],
-        extra_compile_args=['-O3','-fopenmp','-xcore-avx2','-I/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/libimf.a'],
+        extra_compile_args=['-O3','-fopenmp','-mavx'],
         extra_link_args=['-fopenmp'],
         language='c'),
         
         Extension('prop2d_cython_4_loop_parallel',
         sources=['xwp_cython/prop2d_cython_4_loop_parallel.pyx'],
-        extra_compile_args=['-O3','-fopenmp','-xcore-avx2','-I/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/libimf.a'],
+        extra_compile_args=['-O3','-fopenmp','-mavx'],
         extra_link_args = ['-fopenmp'],
         language='c')
         ]
