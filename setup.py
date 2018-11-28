@@ -1,5 +1,5 @@
 from setuptools import setup
-from distutils.extension import Extension
+from setuptools.extension import Extension
 from Cython.Distutils import build_ext
 import numpy as np 
 
