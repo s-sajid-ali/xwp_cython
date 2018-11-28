@@ -44,7 +44,7 @@ cdef void add_clean(double complex* arr, double complex* result_temp,\
 @cython.boundscheck(False)
 @cython.wraparound(False)
 @cython.cdivision(True)
-cpdef exact_prop_cython_1d(double complex [:] in_wave, double complex [:] out_wave,\
+cpdef exact_prop_cython(double complex [:] in_wave, double complex [:] out_wave,\
                double L_in, double L_out, double wavel, double z):
     
     cdef double pi = 3.14159265359

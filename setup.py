@@ -4,30 +4,25 @@ from Cython.Distutils import build_ext
 import numpy as np 
 
 ext_modules=[
-        Extension('prop1d_cython',
-        sources=['xwp_cython/prop1d_cython.pyx'],
+        Extension('prop1d',
+        sources=['xwp_cython/prop1d.pyx'],
         extra_compile_args=['-O3','-fopenmp','-mavx'],
         extra_link_args=['-fopenmp'],
         language='c'),
     
-        Extension('prop2d_cython_2_loop',
-        sources=['xwp_cython/prop2d_cython_2_loop.pyx'],
+        Extension('prop2d_2loop',
+        sources=['xwp_cython/prop2d_2loop.pyx'],
         extra_compile_args=['-O3','-fopenmp','-mavx'],
         extra_link_args=['-fopenmp'],
         language='c'),
     
-        Extension('prop2d_cython_4_loop_serial',
-        sources=['xwp_cython/prop2d_cython_4_loop_serial.pyx'],
+        Extension('prop2d_4loop',
+        sources=['xwp_cython/prop2d_4loop.pyx'],
         extra_compile_args=['-O3','-fopenmp','-mavx'],
         extra_link_args=['-fopenmp'],
-        language='c'),
-        
-        Extension('prop2d_cython_4_loop_parallel',
-        sources=['xwp_cython/prop2d_cython_4_loop_parallel.pyx'],
-        extra_compile_args=['-O3','-fopenmp','-mavx'],
-        extra_link_args = ['-fopenmp'],
         language='c')
         ]
+
 
 if __name__ == "__main__":
     setup(
