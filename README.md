@@ -18,5 +18,7 @@ Compiling with icc requires `LDSHARED="icc -shared" CC=icc python setup.py insta
 
 #### Note:
 All physical quantities have SI units. \
+
 The direct wave propagation is somewhat optimized but much more can be done in terms of memeory reuse (so that the same part of the input wave is not repeatedly flushed from the cache). \
-Different integration schemes could give better performance but have not been expreimented here. 
+
+Different integration schemes could give better performance but have not been expreimented here. For example, [quadpy](https://github.com/nschloe/quadpy) contains many schemes for 1D and 2D integrals and handles complex integration as well.
