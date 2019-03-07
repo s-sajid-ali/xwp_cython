@@ -1,6 +1,6 @@
 from setuptools import setup
 from setuptools.extension import Extension
-from Cython.Build import build_ext
+from Cython.Build import build_ext,cythonize
 import numpy as np 
 
 ext_modules=[
@@ -30,9 +30,8 @@ if __name__ == "__main__":
     name = 'xwp_cython',
     packages=['xwp_cython'],
     cmdclass = {'build_ext': build_ext},
-    ext_modules = ext_modules,
+    ext_modules = cythonize(ext_modules),
     include_dirs=[np.get_include()],
-    
     description='X-ray wave propagation techniques in cython',
     url='https://github.com/s-sajid-ali/xwp_cython',
     author='Sajid',
