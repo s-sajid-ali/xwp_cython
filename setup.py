@@ -1,9 +1,9 @@
-from setuptools import setup
-from setuptools.extension import Extension
-from Cython.Build import build_ext
+from distutils.core import setup
+from Cython.Distutils import Extension
+from Cython.Build import build_ext,cythonize
 import numpy as np 
 
-ext_modules=[
+extensions=[
         Extension('prop1d',
         sources=['xwp_cython/prop1d.pyx'],
         extra_compile_args=['-O3','-fopenmp','-xcore-avx2','-I/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/libimf.a'],
@@ -23,20 +23,16 @@ ext_modules=[
         language='c')
         ]
 
-
 if __name__ == "__main__":
     setup(
-
     name = 'xwp_cython',
     packages=['xwp_cython'],
-    cmdclass = {'build_ext': build_ext},
-    ext_modules = ext_modules,
+    #cmdclass = {'build_ext': build_ext},
+    ext_modules = cythonize(extensions),
     include_dirs=[np.get_include()],
-    
     description='X-ray wave propagation techniques in cython',
     url='https://github.com/s-sajid-ali/xwp_cython',
     author='Sajid',
     author_email='sajidsyed2021@u.northwestern.edu',
     zip_safe=False
-        
     )
