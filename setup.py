@@ -30,7 +30,7 @@ if __name__ == "__main__":
     name = 'xwp_cython',
     packages=['xwp_cython'],
     cmdclass = {'build_ext': build_ext},
-    ext_modules = cythonize(ext_modules),
+    ext_modules = cythonize(ext_modules,compiler_directives={'language_level': 3}),
     include_dirs=[np.get_include()],
     description='X-ray wave propagation techniques in cython',
     url='https://github.com/s-sajid-ali/xwp_cython',
