@@ -16,6 +16,8 @@ The master branch builds with `gcc` (assuming `avx`enabled `x86_64` processor) w
 Compiling with gcc can be done in the usual way by invoking `python setup.py install`\
 Compiling with icc requires `LDSHARED="icc -shared" CC=icc python setup.py install` 
 
+While the above steps may successfully lead to creation of a .so object (which can be used to import the functions), I've not found a reliable way to distribute cython code. Hence, this code is left here for anyone to use at their own risk. 
+
 #### Note:
 All physical quantities have SI units. \
 
