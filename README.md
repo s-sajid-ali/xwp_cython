@@ -13,8 +13,8 @@ Numpy, Cython and a working C compiler that supports OpenMP
 #### Compiling: 
 The master branch builds with `gcc` (assuming `avx`enabled `x86_64` processor) while the intel_avx2 builds with `icc` (assuming `avx2` enabled `x86_64` processor). If the intel compiler is installed in a non-standard location (different from /opt/intel), please change the extra_compile_args accordingly.
 
-Compiling with gcc can be done in the usual way by invoking `python setup.py install`\
-Compiling with icc requires `LDSHARED="icc -shared" CC=icc python setup.py install` 
+Compiling with gcc can be done in the usual way by invoking `python setup.py build_ext`\
+Compiling with icc requires `LDSHARED="icc -shared" CC=icc python setup.py build_ext` 
 
 While the above steps may successfully lead to creation of a .so object (which can be used to import the functions and run simulations), I've not found a reliable way to distribute cython code. Hence, this code is left here for anyone to use at their own risk. 
 
