@@ -1,4 +1,0 @@
-prop1d
-prop2d_2loop
-prop2d_4loop
-xwp_cython

@@ -8,19 +8,16 @@ Currently implemented  :
     - 2D : 2loop and 4loop versions. 
   
 #### Requirements:
-Numpy, Cython and a working C compiler that supports OpenMP
+Listed in `pyproject.toml`, these include : Setuptools, Numpy, Cython and a working C compiler that supports OpenMP
 
 #### Compiling: 
-The master branch builds with `gcc` (assuming `avx`enabled `x86_64` processor) while the intel_avx2 builds with `icc` (assuming `avx2` enabled `x86_64` processor). If the intel compiler is installed in a non-standard location (different from /opt/intel), please change the extra_compile_args accordingly.
+Clone the directory via git clone and run `pip install .`, `pip` will read the `pyproject.toml` to automatically use `setuptools.build_meta` backend to compile the `Cython` sources, create a wheel and install it.
 
-Compiling with gcc can be done in the usual way by invoking `python setup.py build_ext`\
-Compiling with icc requires `LDSHARED="icc -shared" CC=icc python setup.py build_ext` 
-
-While the above steps may successfully lead to creation of a .so object (which can be used to import the functions and run simulations), I've not found a reliable way to distribute cython code. Hence, this code is left here for anyone to use at their own risk. 
+(Note that the master branch builds with `gcc` using the `-march=native` compiler flag. The intel_avx2 is an old branch that hasn't been updated but might be.)
 
 #### Note:
-All physical quantities have SI units. \
+All physical quantities have SI units.
 
-The direct wave propagation is somewhat optimized but much more can be done in terms of memeory reuse (so that the same part of the input wave is not repeatedly flushed from the cache). \
+The direct wave propagation is somewhat optimized but much more can be done in terms of memeory reuse (so that the same part of the input wave is not repeatedly flushed from the cache). 
 
 Different integration schemes could give better performance but have not been expreimented here. For example, [quadpy](https://github.com/nschloe/quadpy) contains many schemes for 1D and 2D integrals and handles complex integration as well.
