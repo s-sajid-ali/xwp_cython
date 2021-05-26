@@ -1,4 +1,5 @@
-#%%cython --compile-args=-fopenmp --compile-args=-O3 --link-args=-fopenmp
+#cython: language_level=3
+
 '''
 Cythonized exact propagation in 2D.  
 

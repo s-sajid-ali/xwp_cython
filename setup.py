@@ -7,19 +7,19 @@ ext_modules = [
     Extension('xwp_cython.prop1d',
               sources=['xwp_cython/prop1d.pyx'],
               extra_compile_args=['-O3', '-fopenmp', '-march=native'],
-              extra_link_args=['-fopenmp'],
+              extra_link_args=['-lomp'],
               language='c'),
 
     Extension('xwp_cython.prop2d_2loop',
               sources=['xwp_cython/prop2d_2loop.pyx'],
               extra_compile_args=['-O3', '-fopenmp', '-march=native'],
-              extra_link_args=['-fopenmp'],
+              extra_link_args=['-lomp'],
               language='c'),
 
     Extension('xwp_cython.prop2d_4loop',
               sources=['xwp_cython/prop2d_4loop.pyx'],
               extra_compile_args=['-O3', '-fopenmp', '-march=native'],
-              extra_link_args=['-fopenmp'],
+              extra_link_args=['-lomp'],
               language='c')
 ]
 

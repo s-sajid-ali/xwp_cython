@@ -1,4 +1,5 @@
-##%%cython --compile-args=-fopenmp --compile-args=-O3 --link-args=-fopenmp --force 
+#cython: languagelevel=3_
+
 '''
 Cythonized exact propagation in 1D. Parallelized inner loop.
 '''
