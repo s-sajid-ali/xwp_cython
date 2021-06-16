@@ -11,7 +11,7 @@ Currently implemented  :
 Listed in `pyproject.toml`, these include : Setuptools, Numpy, Cython and a working C compiler that supports OpenMP
 
 #### Compiling: 
-Clone the directory via git clone and run `pip install .`, `pip` will read the `pyproject.toml` to automatically use `setuptools.build_meta` backend to compile the `Cython` sources, create a wheel and install it.
+Clone the directory via git clone and run ` CC=compiler-name CFLAGS="-O3 -ffast-math -march=native -mtune=native" pip install . -v`, `pip` will read the `pyproject.toml` to automatically use `setuptools.build_meta` backend to compile the `Cython` sources, create a wheel and install it.
 
 (Note that the master branch builds with `gcc` using the `-march=native` compiler flag. The intel_avx2 is an old branch that hasn't been updated but might be.)
 
